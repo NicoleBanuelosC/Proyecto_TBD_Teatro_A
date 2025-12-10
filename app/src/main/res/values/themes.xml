@@ -1,9 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ProyectoFinal_TBD_Teatro" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme.ProyectoFinal_TBD_Teatro" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+        <!-- colores primarios -->
+        <item name="colorPrimary">@color/rosa_teatro</item>
+        <item name="colorPrimaryVariant">@color/rosa_oscuro</item>
+        <item name="colorOnPrimary">@color/text_light</item>
+
+        <!-- fondo de la app -->
+        <item name="android:windowBackground">@color/background_primary</item>
+
+        <!-- estilo de botones -->
+        <item name="buttonStyle">@style/TeatroButton</item>
     </style>
 
-    <style name="Theme.ProyectoFinal_TBD_Teatro" parent="Base.Theme.ProyectoFinal_TBD_Teatro" />
+    <!-- estilo personalizado de los botones -->
+    <style name="TeatroButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/rosa_teatro</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_light</item>
+        <item name="elevation">4dp</item>
+    </style>
 </resources>
