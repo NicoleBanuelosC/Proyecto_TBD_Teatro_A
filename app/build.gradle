@@ -34,6 +34,9 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
 
+    //darle diseñito con tarjetas con sombritas
+    implementation 'androidx.cardview:cardview:1.0.0'
+
     // RecyclerView (necesario para listas)
     implementation 'androidx.recyclerview:recyclerview:1.3.2'
 
