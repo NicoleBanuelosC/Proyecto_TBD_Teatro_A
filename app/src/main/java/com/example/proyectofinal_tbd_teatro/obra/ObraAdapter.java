@@ -50,7 +50,8 @@ public class ObraAdapter extends RecyclerView.Adapter<ObraAdapter.ViewHolder> {
                         activity.executor.execute(() -> {
                             activity.db.obraDao().delete(obra);
                             activity.runOnUiThread(() -> activity.cargarObras());
-                        });                    })
+                        });
+                    })
                     .setNegativeButton("No", null)
                     .show();
             return true;

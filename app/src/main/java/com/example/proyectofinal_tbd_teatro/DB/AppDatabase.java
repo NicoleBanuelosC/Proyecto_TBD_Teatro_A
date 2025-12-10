@@ -4,7 +4,6 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-
 import com.example.proyectofinal_tbd_teatro.obra.Obra;
 import com.example.proyectofinal_tbd_teatro.produccion.Produccion;
 
@@ -12,8 +11,7 @@ import com.example.proyectofinal_tbd_teatro.produccion.Produccion;
         entities = {Obra.class, Produccion.class},
         version = 1,
         exportSchema = false
-)//database
-
+)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract com.example.proyectofinal_tbd_teatro.obra.ObraDao obraDao();
     public abstract com.example.proyectofinal_tbd_teatro.produccion.ProduccionDao produccionDao();
@@ -30,14 +28,9 @@ public abstract class AppDatabase extends RoomDatabase {
                                     "teatro_pleasantville_db"
                             )
                             .build();
-                }//if
-
-            }//synchronized
-
-        }//if
-
+                }
+            }
+        }
         return INSTANCE;
-
-    }//public static
-
-}//appDatabase
+    }
+}

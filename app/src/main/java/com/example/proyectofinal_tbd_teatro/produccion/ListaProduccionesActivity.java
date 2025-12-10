@@ -1,6 +1,8 @@
 package com.example.proyectofinal_tbd_teatro.produccion;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,21 +16,26 @@ public class ListaProduccionesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ProduccionAdapter adapter;
-    protected AppDatabase db; //portected para que se pueda acceder
-    protected ExecutorService executor = Executors.newSingleThreadExecutor(); // protected para el acceso
+    protected AppDatabase db;
+    protected ExecutorService executor = Executors.newSingleThreadExecutor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_producciones);
 
-        db = AppDatabase.getDatabase(this); //inicializa db
-
+        db = AppDatabase.getDatabase(this);
         recyclerView = findViewById(R.id.recyclerViewProducciones);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        // BOTÓN PARA AGREGAR
+        Button btnAdd = findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(v -> {
+            startActivity(new Intent(this, FormProduccionActivity.class));
+        });
+
         cargarProducciones();
-    }//onCreate
+    }
 
     protected void cargarProducciones() {
         executor.execute(() -> {
@@ -38,12 +45,11 @@ public class ListaProduccionesActivity extends AppCompatActivity {
                 recyclerView.setAdapter(adapter);
             });
         });
-    }//cargarProducciones
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
         cargarProducciones();
-    }//onResume
-
-}//public class
+    }
+}

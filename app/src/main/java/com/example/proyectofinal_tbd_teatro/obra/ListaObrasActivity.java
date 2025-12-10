@@ -1,8 +1,8 @@
 package com.example.proyectofinal_tbd_teatro.obra;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,12 +16,9 @@ public class ListaObrasActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ObraAdapter adapter;
-
-    //protected porque permite que las clases dentro del mismo paquete accedan a ellos
-    protected ExecutorService executor = Executors.newSingleThreadExecutor();
     protected AppDatabase db;
+    protected ExecutorService executor = Executors.newSingleThreadExecutor();
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +28,16 @@ public class ListaObrasActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewObras);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        cargarObras();
-    }//onCreate
+        // BOTÓN PARA AGREGAR
+        Button btnAdd = findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(v -> {
+            startActivity(new Intent(this, FormObraActivity.class));
+        });
 
-    void cargarObras() {
+        cargarObras();
+    }
+
+    protected void cargarObras() {
         executor.execute(() -> {
             List<Obra> obras = db.obraDao().getAll();
             runOnUiThread(() -> {
@@ -42,12 +45,11 @@ public class ListaObrasActivity extends AppCompatActivity {
                 recyclerView.setAdapter(adapter);
             });
         });
-    }//cargarObras
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
         cargarObras();
-    }//onResume
-
-}//public class
+    }
+}

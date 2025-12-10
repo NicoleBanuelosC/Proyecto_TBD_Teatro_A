@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ProyectoFinal_TBD_Teatro"
         tools:targetApi="31">
 
-        <!-- LoginActivity sera la primera pantalla al abrir la app -->
+        <!-- LoginActivity es la primera pantalla -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -23,9 +23,16 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+        <!-- MainActivity ya no es launcher -->
+        <activity android:name=".MainActivity" />
+
+        <!-- obra -->
+        <activity android:name=".obra.ListaObrasActivity" />
+        <activity android:name=".obra.FormObraActivity" />
+
+        <!-- produccion -->
+        <activity android:name=".produccion.ListaProduccionesActivity" />
+        <activity android:name=".produccion.FormProduccionActivity" />
 
     </application>
 

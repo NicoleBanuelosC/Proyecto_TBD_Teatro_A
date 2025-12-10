@@ -14,30 +14,20 @@
         android:textColor="#333333"
         android:layout_margin="16dp"/>
 
-    <TextView
-        android:id="@+id/tvEmpty"
+    <Button
+        android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No hay producciones registradas"
-        android:textSize="16sp"
-        android:textColor="#FF69B4"
-        android:gravity="center"
-        android:visibility="gone"
-        android:layout_marginTop="100dp"/>
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone"/>
+        android:text="➕ Agregar Nueva Producción"
+        android:backgroundTint="#FF69B4"
+        android:textColor="#FFFFFF"
+        android:layout_margin="16dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProducciones"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="8dp"
-        android:contentDescription="Lista de producciones"/>
+        android:padding="8dp"/>
 
 </LinearLayout>
