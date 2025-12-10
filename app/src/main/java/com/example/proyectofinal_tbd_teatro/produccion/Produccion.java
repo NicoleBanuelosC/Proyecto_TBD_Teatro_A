@@ -3,6 +3,7 @@ package com.example.proyectofinal_tbd_teatro.produccion;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+import java.io.Serializable;
 
 @Entity(
         tableName = "producciones",
@@ -14,7 +15,7 @@ import androidx.room.PrimaryKey;
         )
 )
 
-public class Produccion {
+public class Produccion implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public int id;
 

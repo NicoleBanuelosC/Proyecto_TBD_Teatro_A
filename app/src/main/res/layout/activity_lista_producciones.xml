@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="#FFF0F5"
     android:orientation="vertical">
 
@@ -11,6 +10,14 @@
         android:layout_height="wrap_content"
         android:text="Lista de Producciones"
         android:textSize="24sp"
-        android:textColor="#333333"/>
+        android:textColor="#333333"
+        android:layout_margin="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProducciones"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"/>
 
 </LinearLayout>
