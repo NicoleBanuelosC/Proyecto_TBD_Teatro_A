@@ -30,6 +30,7 @@ public class ListaObrasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_obras);
 
         db = AppDatabase.getDatabase(this);
+        // Configuración del RecyclerView para mostrar obras
         recyclerView = findViewById(R.id.recyclerViewObras);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

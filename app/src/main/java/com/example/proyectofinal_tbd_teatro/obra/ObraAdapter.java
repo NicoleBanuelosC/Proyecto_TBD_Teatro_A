@@ -11,6 +11,10 @@ import com.example.proyectofinal_tbd_teatro.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * aqui esta el adaptador personalizado para RecyclerView donde se implementa el patrón Adapter para conectar datos con la interfaz
+ */
+
 public class ObraAdapter extends RecyclerView.Adapter<ObraAdapter.ViewHolder> {
     private List<Obra> obras;
     private ListaObrasActivity activity;

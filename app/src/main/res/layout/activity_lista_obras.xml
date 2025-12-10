@@ -34,6 +34,7 @@
         android:textColor="#FFFFFF"
         android:layout_marginHorizontal="16dp"/>
 
+    <!-- RecyclerView para mostrar la lista de obras con el diseño personalizado -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewObras"
         android:layout_width="match_parent"
