@@ -14,6 +14,17 @@
         android:textColor="#333333"
         android:layout_margin="16dp"/>
 
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Buscar obra por nombre..."
+        android:inputType="text"
+        android:background="@drawable/bg_input"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_margin="16dp"/>
+
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
@@ -21,7 +32,7 @@
         android:text="➕ Agregar Nueva Obra"
         android:backgroundTint="#FF69B4"
         android:textColor="#FFFFFF"
-        android:layout_margin="16dp"/>
+        android:layout_marginHorizontal="16dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewObras"

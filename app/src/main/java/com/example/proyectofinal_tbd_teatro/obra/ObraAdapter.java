@@ -8,15 +8,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.proyectofinal_tbd_teatro.R;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ObraAdapter extends RecyclerView.Adapter<ObraAdapter.ViewHolder> {
     private List<Obra> obras;
     private ListaObrasActivity activity;
+
     public ObraAdapter(List<Obra> obras, ListaObrasActivity activity) {
-        this.obras = obras;
+        this.obras = new ArrayList<>(obras);
         this.activity = activity;
-    }//publicObraAdaorte
+    }//obraAdapter
 
     @NonNull
     @Override
@@ -24,7 +26,7 @@ public class ObraAdapter extends RecyclerView.Adapter<ObraAdapter.ViewHolder> {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_obra, parent, false);
         return new ViewHolder(view);
-    }//voewHolder
+    }//viewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -34,14 +36,12 @@ public class ObraAdapter extends RecyclerView.Adapter<ObraAdapter.ViewHolder> {
         holder.tvGenero.setText("Género: " + obra.genero);
         holder.tvDuracion.setText("Duración: " + obra.duracionMinutos + " min");
 
-        // editar al hacer clic
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(activity, FormObraActivity.class);
             intent.putExtra("OBRA", obra);
             activity.startActivity(intent);
         });
 
-        // eliminar al mantener presionado
         holder.itemView.setOnLongClickListener(v -> {
             new android.app.AlertDialog.Builder(activity)
                     .setTitle("Eliminar")
@@ -56,17 +56,18 @@ public class ObraAdapter extends RecyclerView.Adapter<ObraAdapter.ViewHolder> {
                     .show();
             return true;
         });
-    }//onBindViewHolder
+    }//onBind
 
     @Override
     public int getItemCount() {
         return obras.size();
     }//getItemCount
 
-    public void updateList(List<Obra> nuevaLista) {
-        this.obras = nuevaLista;
+    // catucliazr la lista desde afuere
+    public void updateList(List<Obra> newObraList) {
+        this.obras = new ArrayList<>(newObraList);
         notifyDataSetChanged();
-    }//updateList
+    }//update
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvNombre, tvAutor, tvGenero, tvDuracion;
@@ -76,6 +77,8 @@ public class ObraAdapter extends RecyclerView.Adapter<ObraAdapter.ViewHolder> {
             tvAutor = itemView.findViewById(R.id.tvAutor);
             tvGenero = itemView.findViewById(R.id.tvGenero);
             tvDuracion = itemView.findViewById(R.id.tvDuracion);
-        }//viewHolder
-    }//static ckass
+        }//viewHokder
+
+    }//static class
+
 }//public class
