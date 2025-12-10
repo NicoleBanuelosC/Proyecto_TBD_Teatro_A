@@ -13,12 +13,19 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/*
+agrega la alta y el cambio
+muestra el de fecha con su validacion correspondiente dd/mm/aaaa
+se selecciona una obra del spinner (como tabla relacionada)
+guarda los datos tambien
+ */
+
 public class FormProduccionActivity extends AppCompatActivity {
 
     private EditText etLugar, etFecha, etPresupuesto;
     private Spinner spObra;
     private Button btnGuardar;
-    private AppDatabase db; // ← Declara db aquí
+    private AppDatabase db; // ← declara db aquí
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private Produccion produccionActual = null;
 

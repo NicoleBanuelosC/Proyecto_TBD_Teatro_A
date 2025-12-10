@@ -12,6 +12,11 @@ import java.io.Serializable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/*
+aqui es donde el usuario podra hace rel altas y el cambio, ademas muestra un diseño muy agradable y entendible
+muestra los campos, guarda datos y carga sus datos para editar
+ */
+
 public class FormObraActivity extends AppCompatActivity {
     private EditText etNombre, etAutor, etDuracion;
     private Spinner spGenero;
