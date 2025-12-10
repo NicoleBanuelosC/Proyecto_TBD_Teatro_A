@@ -38,6 +38,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:padding="8dp"
-        android:contentDescription="Lista de producciones"/> 
+        android:contentDescription="Lista de producciones"/>
 
 </LinearLayout>
