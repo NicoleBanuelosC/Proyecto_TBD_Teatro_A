@@ -16,8 +16,10 @@ public class ListaObrasActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ObraAdapter adapter;
-    private AppDatabase db;
-    private ExecutorService executor = Executors.newSingleThreadExecutor();
+
+    //protected porque permite que las clases dentro del mismo paquete accedan a ellos
+    protected ExecutorService executor = Executors.newSingleThreadExecutor();
+    protected AppDatabase db;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -32,11 +34,11 @@ public class ListaObrasActivity extends AppCompatActivity {
         cargarObras();
     }//onCreate
 
-    private void cargarObras() {
+    void cargarObras() {
         executor.execute(() -> {
             List<Obra> obras = db.obraDao().getAll();
             runOnUiThread(() -> {
-                adapter = new ObraAdapter(obras);
+                adapter = new ObraAdapter(obras, this);
                 recyclerView.setAdapter(adapter);
             });
         });

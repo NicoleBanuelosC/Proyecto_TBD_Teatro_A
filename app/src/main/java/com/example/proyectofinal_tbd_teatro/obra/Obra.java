@@ -3,8 +3,10 @@ package com.example.proyectofinal_tbd_teatro.obra;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "obras")
-public class Obra {
+public class Obra implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
