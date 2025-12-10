@@ -70,11 +70,20 @@ public class FormProduccionActivity extends AppCompatActivity {
         String fecha = etFecha.getText().toString().trim();
         String presupuestoStr = etPresupuesto.getText().toString().trim();
 
+        // alidación de campos vacíos
         if (lugar.isEmpty() || fecha.isEmpty() || presupuestoStr.isEmpty()) {
             Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
             return;
         }//if
 
+        // validación de formato de fecha (dd/mm/yyyy)
+        if (!fecha.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            Toast.makeText(this, "La fecha debe ser en formato dd/mm/yyyy", Toast.LENGTH_SHORT).show();
+            etFecha.requestFocus();
+            return;
+        }//if
+
+        // validación de presupuesto
         double presupuesto;
         try {
             presupuesto = Double.parseDouble(presupuestoStr);
@@ -85,8 +94,9 @@ public class FormProduccionActivity extends AppCompatActivity {
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Presupuesto inválido", Toast.LENGTH_SHORT).show();
             return;
-        }//catch
+        }//try catchc
 
+        // guardar producción
         Produccion produccion = new Produccion();
         produccion.lugar = lugar;
         produccion.fecha = fecha;
@@ -102,7 +112,7 @@ public class FormProduccionActivity extends AppCompatActivity {
                 db.produccionDao().update(produccion);
             } else {
                 db.produccionDao().insert(produccion);
-            }//else
+            }//if
 
             runOnUiThread(() -> {
                 Toast.makeText(this, "Producción guardada", Toast.LENGTH_SHORT).show();
