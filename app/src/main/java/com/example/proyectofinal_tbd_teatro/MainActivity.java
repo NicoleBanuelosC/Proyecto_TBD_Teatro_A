@@ -11,6 +11,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.proyectofinal_tbd_teatro.obra.ListaObrasActivity;
 import com.example.proyectofinal_tbd_teatro.produccion.ListaProduccionesActivity;
 
+/*
+Menu principal y muestra los botones segun el rol que ingrese
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
