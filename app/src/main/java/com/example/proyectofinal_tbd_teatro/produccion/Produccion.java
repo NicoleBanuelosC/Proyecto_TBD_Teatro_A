@@ -1,4 +1,4 @@
-package com.example.proyectofinal_tbd_teatro.Produccion;
+package com.example.proyectofinal_tbd_teatro.produccion;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity(
         tableName = "producciones",
         foreignKeys = @ForeignKey(
-                entity = com.example.proyectofinal_tbd_teatro.Obra.Obra.class,
+                entity = com.example.proyectofinal_tbd_teatro.obra.Obra.class,
                 parentColumns = "id",
                 childColumns = "obraId",
                 onDelete = ForeignKey.CASCADE

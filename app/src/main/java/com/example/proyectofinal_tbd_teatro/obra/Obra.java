@@ -1,4 +1,4 @@
-package com.example.proyectofinal_tbd_teatro.Obra;
+package com.example.proyectofinal_tbd_teatro.obra;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

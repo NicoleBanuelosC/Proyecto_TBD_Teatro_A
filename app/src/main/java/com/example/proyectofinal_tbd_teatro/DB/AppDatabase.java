@@ -4,9 +4,9 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.ForeignKey;
-import com.example.proyectofinal_tbd_teatro.Obra.Obra;
-import com.example.proyectofinal_tbd_teatro.Produccion.Produccion;
+
+import com.example.proyectofinal_tbd_teatro.obra.Obra;
+import com.example.proyectofinal_tbd_teatro.produccion.Produccion;
 
 @Database(
         entities = {Obra.class, Produccion.class},
@@ -15,8 +15,8 @@ import com.example.proyectofinal_tbd_teatro.Produccion.Produccion;
 )//database
 
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract com.example.proyectofinal_tbd_teatro.Obra.ObraDao obraDao();
-    public abstract com.example.proyectofinal_tbd_teatro.Produccion.ProduccionDao produccionDao();
+    public abstract com.example.proyectofinal_tbd_teatro.obra.ObraDao obraDao();
+    public abstract com.example.proyectofinal_tbd_teatro.produccion.ProduccionDao produccionDao();
 
     private static volatile AppDatabase INSTANCE;
 

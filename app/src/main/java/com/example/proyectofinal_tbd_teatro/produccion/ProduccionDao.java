@@ -1,4 +1,4 @@
-package com.example.proyectofinal_tbd_teatro.Produccion;
+package com.example.proyectofinal_tbd_teatro.produccion;
 
 import androidx.room.*;
 import java.util.List;

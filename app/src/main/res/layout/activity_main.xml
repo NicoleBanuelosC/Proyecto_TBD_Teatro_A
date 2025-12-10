@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Teatro Pleasantville"
+            android:text="Menú Principal"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#333333"
@@ -31,7 +31,8 @@
             android:backgroundTint="#FF69B4"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            app:cornerRadius="12dp"/>
 
         <Button
             android:id="@+id/btnProducciones"
@@ -41,7 +42,8 @@
             android:backgroundTint="#FF69B4"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            app:cornerRadius="12dp"/>
 
     </LinearLayout>
 
