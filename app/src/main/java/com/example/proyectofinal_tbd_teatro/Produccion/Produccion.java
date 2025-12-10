@@ -1,8 +1,8 @@
 package com.example.proyectofinal_tbd_teatro.Produccion;
-import androidx.room.Entity;
 
-import androidx.room.PrimaryKey;
+import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 @Entity(
         tableName = "producciones",
@@ -13,11 +13,12 @@ import androidx.room.ForeignKey;
                 onDelete = ForeignKey.CASCADE
         )
 )
+
 public class Produccion {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
-    public int obraId; // ← Relación con Obra
+    public int obraId; // aqui esta la relación con Obra
     public String lugar;
     public String fecha; // Formato: "dd/MM/yyyy"
     public double presupuesto;
@@ -29,5 +30,6 @@ public class Produccion {
         this.lugar = lugar;
         this.fecha = fecha;
         this.presupuesto = presupuesto;
-    }
+    }//public Produccion
+
 }//public class
